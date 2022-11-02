@@ -58,7 +58,7 @@ public class Vendor {
 	public Vendor() {
 		
 	}
-	
+	//commented code
 	public Vendor(String code, String companyName, String contactName, String lastName, String website, String email,
 			String status, Date regDate) {
 		super();
