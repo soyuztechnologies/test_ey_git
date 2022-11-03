@@ -9,23 +9,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entities.Address;
-import com.example.demo.services.AddressService;
+import com.example.demo.service.addressService;
 
 @RestController
 public class AddressController {
 	
-	
 	@Autowired
-	AddressService addSrv;
+	addressService addSrv;
 	
+	//http://localhost:8080/addresses
 	@RequestMapping("/addresses")
 	public List<Address> getAddress(){
-		return addSrv.getAddresses();
+		return addSrv.getAddress();
 	}
 	
-	@PostMapping("/address")
-	public Address createAddress(@RequestBody Address payload){
+	//POST operation test http://localhost:8080/addresses
+//	{
+//		"addressType":"H",
+//	    "street":"MG Road",
+//	    "city":"Bangalore",
+//	    "country": "India",
+//	    "region":"APJ"
+//	}
+	@PostMapping("/addresses")
+	public Address createAddress(@RequestBody Address payload) {
 		return addSrv.createAddress(payload);
 	}
-	
 }
